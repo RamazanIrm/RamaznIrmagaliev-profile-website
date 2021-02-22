@@ -23,6 +23,4 @@ Route::get('/about', function () {
 Route::get('/hobby', function () {
     return view('hobby');
 })->name('hobby');
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
+
