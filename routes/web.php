@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
 
-Use App\Models\Post;
+use App\Models\Post;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +15,9 @@ Use App\Models\Post;
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Route::get('/about', function () {
     return view('about');
@@ -30,7 +31,7 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
-Route::get('/post/create', function(){
+Route::get('post/create', function(){
     DB::table('post')-> insert([
         'title'=> 'TITLE',
         'body'=> 'LOREM IPSUM'
@@ -38,6 +39,6 @@ Route::get('/post/create', function(){
 });
 
 Route::get('post', function(){
-    $post= client::find(1);
+    $post= Post::find(1);
     return $post;
     });
