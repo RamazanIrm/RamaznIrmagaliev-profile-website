@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 
-use App\Models\Post;
+use App\Models\Post; 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
